@@ -25,7 +25,7 @@ jobs:
       - name: Extract PMD violations count
         id: extract
         run: |
-          violations_count=$(echo "${{ steps.pmd.outputs.report }}" | grep -o 'Problem: ' | wc -l)
+          violations_count=$(echo "${{ steps.pmd.outputs.report }}" | grep -o "Problem: " | wc -l)
           echo "violations=$violations_count" >> $GITHUB_ENV
 
       - name: Check violations threshold
