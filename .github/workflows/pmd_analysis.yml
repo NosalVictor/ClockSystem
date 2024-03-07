@@ -1,0 +1,22 @@
+name: Static Code Analysis with PMD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  pmd_analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Static Code Analysis with PMD
+        uses: pmd/pmd-github-action@v3
+        with:
+          rulesets: 'java-basic'
