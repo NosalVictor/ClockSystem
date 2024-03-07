@@ -31,3 +31,7 @@ jobs:
         with:
           name: scorecard-report
           path: scorecard_report.json
+      - name: Upload SARIF results
+        uses: github/codeql-action/upload-sarif@17573ee1cc1b9d061760f3a006fc4aac4f944fd5
+        with:
+          sarif_file: scorecard_report.json
