@@ -30,7 +30,8 @@ jobs:
       - name: Check violations threshold
         run: |
           THRESHOLD=10 # Set your threshold here
-          if [ "${{ steps.extract.outputs.violations }}" -gt $THRESHOLD ]; then
+          VIOLATIONS=$(printf "%d" "${{ steps.extract.outputs.violations }}")
+          if [ "$VIOLATIONS" -gt $THRESHOLD ]; then
             echo "Number of violations exceeds threshold. Failing workflow."
             exit 1
           fi
