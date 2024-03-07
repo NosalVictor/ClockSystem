@@ -12,6 +12,9 @@ jobs:
   analysis:
     name: Scorecard analysis
     runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      id-token: write
 
     steps:
       - name: "Checkout code"
@@ -22,16 +25,16 @@ jobs:
       - name: "Run analysis"
         uses: ossf/scorecard-action@e38b1902ae4f44df626f11ba0734b14fb91f8f86 # v2.1.2
         with:
-          results_file: scorecard_report.json
-          results_format: json
-          publish: true
+          results_file: results.sarif
+          results_format: sarif
+          publish_results: true
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3.1.0
         with:
-          name: scorecard-report
-          path: scorecard_report.json
+          name: SARIF file
+          path: results.sarif
       - name: Upload SARIF results
         uses: github/codeql-action/upload-sarif@17573ee1cc1b9d061760f3a006fc4aac4f944fd5
         with:
-          sarif_file: scorecard_report.json
+          sarif_file: results.sarif
