@@ -18,4 +18,4 @@ jobs:
 
       # Add steps to run OpenSSF Scorecard
       - name: Run OpenSSF Scorecard
-        uses: ossf/scorecard-action@v2
+        uses: ossf/scorecard-action@v1
