@@ -21,3 +21,6 @@ jobs:
 
       - name: Run ActionLint
         run: actionlint .github/workflows/*.yml
+      - uses: devops-actions/actionlint@<VERSION OR SHA>
+        continue-on-error: true
+        id: action-lint
