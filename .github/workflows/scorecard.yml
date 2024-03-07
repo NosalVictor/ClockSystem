@@ -14,8 +14,8 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
 
       # Add steps to run OpenSSF Scorecard
       - name: Run OpenSSF Scorecard
-        uses: ossf/scorecard-action@v1
+        uses: ossf/scorecard-action@80e868c13c90f172d68d1f4501dee99e2479f7af
