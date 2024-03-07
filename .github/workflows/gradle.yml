@@ -33,7 +33,7 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
     - name: Start Xvfb
-      run: "Xvfb $DISPLAY -ac -screen 0 1600x1200x24 > /dev/null 2>&1 &"
+      run: "Xvfb \"$DISPLAY\" -ac -screen 0 1600x1200x24 > /dev/null 2>&1 &"
     - name: Upload Test Report
       uses: actions/upload-artifact@v2
       with:
