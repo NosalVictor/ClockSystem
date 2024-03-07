@@ -18,18 +18,19 @@ jobs:
 
       - name: Run PMD Static Code Analysis
         id: pmd
-        uses: pmd/pmd-github-action@v1
+        uses: pmd/pmd-github-action@v4
         with:
           rulesets: 'java-basic'
 
       - name: Extract PMD violations count
         id: extract
-        run: echo "::set-output name=violations::$(echo '${{ steps.pmd.outputs.report }}' | grep -o 'Problem: ' | wc -l)"
+        run: |
+          echo "::set-output name=violations::$(echo '${{ steps.pmd.outputs.report }}' | grep -o 'Problem: ' | wc -l)"
 
       - name: Check violations threshold
         run: |
           THRESHOLD=10 # Set your threshold here
-          if [ ${{ steps.extract.outputs.violations }} -gt $THRESHOLD ]; then
+          if [ "${{ steps.extract.outputs.violations }}" -gt $THRESHOLD ]; then
             echo "Number of violations exceeds threshold. Failing workflow."
             exit 1
           fi
