@@ -24,4 +24,4 @@ jobs:
         with:
           results_file: scorecard_report.json
           results_format: json
-          publish: true
+          publish_results: true
