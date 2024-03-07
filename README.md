@@ -21,3 +21,5 @@ The application has been tested locally with Java 21 and Gradle 8.5 (on MacOS). 
 [![Static Code Analysis with PMD](https://github.com/NosalVictor/ClockSystem/actions/workflows/pmd_analysis.yml/badge.svg)](https://github.com/NosalVictor/ClockSystem/actions/workflows/pmd_analysis.yml)
 
 [![CodeQL](https://github.com/NosalVictor/ClockSystem/actions/workflows/codeql.yml/badge.svg)](https://github.com/NosalVictor/ClockSystem/actions/workflows/codeql.yml)
+
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/NosalVictor/ClockSystem/badge)](https://securityscorecards.dev/viewer/?uri=github.com/NosalVictor/ClockSystem)
